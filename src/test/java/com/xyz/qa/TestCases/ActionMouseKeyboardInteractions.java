@@ -1,6 +1,7 @@
 package com.xyz.qa.TestCases;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,7 +17,7 @@ public class ActionMouseKeyboardInteractions extends TestBase {
 	By fileld2= By.xpath("//input[@id='field2']");
 	By dragelement= By.xpath("//div[@id='draggable']");
 	By dropelement= By.xpath("//div[@id='droppable']");
-	@Test
+	@Test(priority = 0)
 	public void mouseActions() throws InterruptedException
 	{
 		driver=getdriver();
@@ -34,6 +35,15 @@ public class ActionMouseKeyboardInteractions extends TestBase {
 		myactions.dragAndDrop(driver.findElement(dragelement), driver.findElement(dropelement)).build().perform();
 		Thread.sleep(1000);
 		myactions.clickAndHold(driver.findElement(By.xpath("//div[@id='HTML7']//span[1]"))).moveByOffset(100, 0).perform();
+		Thread.sleep(3000);
+	}
+	
+	@Test(priority = 1)
+	public void keyBoardActions() throws InterruptedException
+	{
+		Actions myactions=new Actions(driver);
+		driver.findElement(By.xpath("//textarea[@id='textarea']")).sendKeys("nrewighgnrtgnj");
+		myactions.click(driver.findElement(By.xpath("//textarea[@id='textarea']"))).keyDown(Keys.CONTROL).sendKeys("A").keyUp(Keys.CONTROL).perform();
 		Thread.sleep(3000);
 	}
 	
