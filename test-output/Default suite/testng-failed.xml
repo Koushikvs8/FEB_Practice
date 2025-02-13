@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.xyz.qa.TestCases.ActionMouseKeyboardInteractions">
+      <class name="com.xyz.qa.TestCases.Switchingcontrol">
         <methods>
-          <include name="mouseActions"/>
           <include name="setup"/>
+          <include name="Swichtotabs"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.xyz.qa.TestCases.ActionMouseKeyboardInteractions -->
+      </class> <!-- com.xyz.qa.TestCases.Switchingcontrol -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
